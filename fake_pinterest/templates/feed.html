@@ -1,0 +1,21 @@
+{% extends "homepage.html" %}
+
+{% block body %}
+{% include "navbar.html" %}
+
+<body>
+    <div class="container">
+
+
+      <div class="conteudo">
+        {% for photo in photos %}
+        <a href="{{ url_for('profile', user_id=photo.user_id)}}" class="bloco-imagem">
+          <img src="{{ url_for('static', filename= 'photos_posts/{}'.format(photo.image))}}" alt="Pinterest 1" />
+        </a>
+
+        {% endfor %}
+
+    </div>
+    </div>
+  </body>
+  {% endblock %}
